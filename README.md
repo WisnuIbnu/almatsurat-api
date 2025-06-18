@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📿 Al-Matsurat API
 
-## Getting Started
+API sederhana yang dibangun menggunakan **Next.js** untuk menyediakan konten **Al-Matsurat**, sebuah kumpulan dzikir pagi dan sore yang disusun oleh Imam Hasan Al-Banna. API ini menyajikan data dalam bentuk JSON dan dapat digunakan pada aplikasi mobile, website, atau sistem lainnya yang membutuhkan integrasi dzikir harian.
 
-First, run the development server:
+## 🚀 Fitur
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Dzikir Pagi & Sore Al-Matsurat versi **Sugro** (ringkas) dan **Kubro** (lengkap)
+- Respons data dalam format JSON
+- Dapat di-deploy di platform seperti Vercel, Netlify, dsb.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📌 Endpoint
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+| Name           | Endpoint URL                        | Deskripsi                              |
+|----------------|--------------------------------------|----------------------------------------|
+| Pagi Kubro     | `/api/almatsurat/pagiKubro`         | Dzikir pagi versi lengkap (Kubro)      |
+| Sore Kubro     | `/api/almatsurat/soreKubro`         | Dzikir sore versi lengkap (Kubro)      |
+| Pagi Sugro     | `/api/almatsurat/pagiSugro`         | Dzikir pagi versi ringkas (Sugro)      |
+| Sore Sugro     | `/api/almatsurat/soreSugro`         | Dzikir sore versi ringkas (Sugro)      |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔧 Teknologi
 
-## Learn More
+- **Framework**: [Next.js](https://nextjs.org)
+- **Bahasa**: JavaScript (Node.js Runtime)
+- **Format Output**: JSON
 
-To learn more about Next.js, take a look at the following resources:
+## 💡 Contoh Respons
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```json
+{
+  "title": "Doa Masuk Waktu Pagi",
+  "arab": "اللّهُـمَّ بِكَ أَصْبَـحْنا...",
+  "latin": "Allahumma bika ashbahna...",
+  "terjemah": "Ya Allah, dengan-Mu kami memasuki waktu pagi..."
+}
