@@ -16,7 +16,9 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-primary/10 mt-8 pt-8 text-center text-muted-foreground text-sm">
-          <p>© {currentYear} Al-Matsurat API. Dibuat dengan ❤️ untuk komunitas.</p>
+          <p>© {currentYear} Al-Matsurat API. Made with ❤️ by  
+            <Link href="https://wisnuibnu-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 ml-1">WisnuIbnu.</Link>
+          </p>
         </div>
       </div>
     </footer>
