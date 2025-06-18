@@ -1,37 +1,70 @@
+/* app/globals.css */
+
+/* Langkah 1: Impor fungsionalitas dasar Tailwind. 
+  Ini adalah cara baru di v4.
+*/
 @import "tailwindcss";
+
+/* Langkah 2: Definisikan CSS Variables untuk tema Anda.
+  Bagian ini sama seperti sebelumnya dan merupakan cara yang benar.
+*/
+
+/* Light Mode (default) */
 :root {
-  --primary-dark: #0a192f;
-  --primary-light: #172a45;
-  --secondary-dark: #1e3a8a;
-  --secondary-light: #3b82f6;
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
+  --bg-color: 248 250 252;      /* slate-50 */
+  --text-color: 30 41 59;        /* slate-800 */
+  --card-bg: 255 255 255;      /* white */
+  --nav-bg: 255 255 255;       /* white */
+  --primary-color: 37 99 235;    /* blue-600 */
+  --primary-foreground-color: 255 255 255; /* white */
+  --muted-bg: 241 245 249;      /* slate-100 */
+  --muted-text-color: 100 116 139; /* slate-500 */
 }
 
-.dark {
-  --bg-primary: var(--primary-dark);
-  --bg-secondary: var(--primary-light);
-  --text-primary: var(--text-primary);
-  --text-secondary: var(--text-secondary);
-  --accent-color: var(--secondary-light);
+/* Dark Mode: biru dongker */
+html.dark {
+  --bg-color: 18 27 46;          /* #121B2E */
+  --text-color: 228 230 235;    /* #E4E6EB */
+  --card-bg: 31 42 68;          /* #1F2A44 */
+  --nav-bg: 22 33 57;          /* #162139 */
+  --primary-color: 59 130 246;    /* blue-500 */
+  --primary-foreground-color: 255 255 255; /* white */
+  --muted-bg: 30 41 59;          /* slate-800 */
+  --muted-text-color: 148 163 184; /* slate-400 */
 }
 
-.light {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #e2e8f0;
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --accent-color: var(--secondary-dark);
+/* Langkah 3: Konfigurasi Tailwind menggunakan direktif @theme.
+  Ini adalah pengganti dari `tailwind.config.js`.
+*/
+@theme {
+  /*
+    Di sini kita memberitahu Tailwind tentang nama-nama warna semantik kita,
+    dan mengarahkannya untuk menggunakan CSS Variables yang sudah kita definisikan.
+  */
+  extend: {
+    colors: {
+      background: 'rgb(var(--bg-color))',
+      foreground: 'rgb(var(--text-color))',
+      card: 'rgb(var(--card-bg))',
+      'card-foreground': 'rgb(var(--text-color))',
+      nav: 'rgb(var(--nav-bg))',
+      primary: {
+        DEFAULT: 'rgb(var(--primary-color))',
+        foreground: 'rgb(var(--primary-foreground-color))',
+      },
+      muted: {
+        DEFAULT: 'rgb(var(--muted-bg))',
+        foreground: 'rgb(var(--muted-text-color))',
+      },
+    },
+  }
 }
 
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: all 0.3s ease;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+/* Langkah 4: Terapkan style dasar ke elemen HTML.
+  Ini memastikan transisi warna berjalan mulus.
+*/
+@layer base {
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
 }

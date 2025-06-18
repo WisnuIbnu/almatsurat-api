@@ -27,8 +27,15 @@ API sederhana yang dibangun menggunakan **Next.js** untuk menyediakan konten **A
 
 ```json
 {
-  "title": "Doa Masuk Waktu Pagi",
-  "arab": "اللّهُـمَّ بِكَ أَصْبَـحْنا...",
-  "latin": "Allahumma bika ashbahna...",
-  "terjemah": "Ya Allah, dengan-Mu kami memasuki waktu pagi..."
+  "title": "Al-Matsurat Pagi Kubro",
+  "time": "morning",
+  "dzikir": [
+    {
+      "id": "1",
+      "title": "Ta'awudz",
+      "repeat": 1,
+      "arabic": "أَعُوذُ بِاللَّهِ السَّمِيعِ الْعَلِيمِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
+      "translation": "Aku berlindung kepada Allah yang Maha Mendengar lagi Maha Mengetahui dari godaan setan yang terkutuk."
+    },
+  ]
 }
