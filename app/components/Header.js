@@ -1,4 +1,5 @@
 // app/components/Header.js
+import Link from 'next/link';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 export default function Header() {
@@ -9,7 +10,7 @@ export default function Header() {
           Al-Matsurat API
         </div>
         <div className="flex items-center gap-4">
-           <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">GitHub</a>
+           <Link href="https://wisnuibnu-dev.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
            <ThemeSwitcher />
         </div>
       </nav>

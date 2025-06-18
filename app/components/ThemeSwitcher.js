@@ -14,7 +14,6 @@ export const ThemeSwitcher = () => {
   }, []);
 
   if (!mounted) {
-    // Hindari hydration mismatch, jangan render apapun di server
     return <div className="w-9 h-9" />;
   }
 
